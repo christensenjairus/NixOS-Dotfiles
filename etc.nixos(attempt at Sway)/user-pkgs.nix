@@ -1,4 +1,7 @@
 pkgs: with pkgs; [
+      # For Sway
+      # can't find 'icomoon feather' or 'archcraft' fonts
+
       # For AwesomeWM
       awesome
       #roboto
@@ -35,7 +38,6 @@ pkgs: with pkgs; [
       arandr
       # blueberry
       fusuma
-      jetbrains-mono
       #haskellPackages.dmenu
       #haskellPackages.dmenu-pkill
       #haskellPackages.dmenu-search
@@ -86,7 +88,6 @@ pkgs: with pkgs; [
       virtualbox
       remmina
       xterm
-      meslo-lgs-nf
       zsh-powerlevel10k
       xdotool
       wmctrl
@@ -140,7 +141,7 @@ pkgs: with pkgs; [
       vimix-icon-theme
       oceanic-theme
       material-icons
-      #gnome.gnome-tweaks
+      gnome.gnome-tweaks # needed for GTK theming
       #gnomeExtensions.x11-gestures
       #gnomeExtensions.gesture-improvements
       #gnomeExtensions.desktop-icons-ng-ding
