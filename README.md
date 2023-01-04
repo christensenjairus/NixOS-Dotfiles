@@ -9,6 +9,16 @@
 #### Right Click Menu on Desktop
 ![AwesomeWM Menu](https://github.com/christensenjairus/NixOS-Config/blob/main/menu%20screenshot.png)
 * * *
+## Procedure
+1) Install the gnome version of NixOS and don't do anything special.
+2) Once booted, install git and clone this repo.
+3) Copy all folders in the `.config` directory to your `.config` directory
+4) Copy the remaining files starting with . to your home directory
+      - Use the files in the `etc.nixos` directory to help you set up a config that will work for your hardware.
+      - **NOTE: Do not edit your existing `hardware-configuration.nix` file because this may be different on many machines. Do not use mine**
+      - You can directly copy `user-pkgs.nix` and `root-pkgs.nix`, but do edits to your `configuration.nix` by hand. 
+5) Try building the system and reboot if it succeeds.
+
 ## Notes:
 ### Onedrive
 Run these commands once to get the onedrive daemon started
