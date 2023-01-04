@@ -1,0 +1,9 @@
+Once postgres is running, and the database & user are made, enter msfconsole, and run 
+
+	db_connect --name msf msf:msf@localhost/msf
+
+Once this is done, you'll only need to run 
+
+	db_connect msf
+
+in future sessions.

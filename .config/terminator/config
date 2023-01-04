@@ -1,0 +1,34 @@
+[global_config]
+  window_state = hidden
+  extra_styling = False
+  title_transmit_fg_color = "#000000"
+  title_transmit_bg_color = "#000000"
+  title_receive_fg_color = "#000000"
+  title_receive_bg_color = "#000000"
+  title_inactive_bg_color = "#000000"
+[keybindings]
+[profiles]
+  [[default]]
+    background_darkness = 0.6
+    background_type = transparent
+    cursor_color = "#aaaaaa"
+    font = JetBrainsMonoNL Nerd Font Mono Semi-Bold 10
+    foreground_color = "#00ff00"
+    show_titlebar = False
+    scrollback_infinite = True
+    palette = "#000000:#aa0000:#00aa00:#aa5500:#0000aa:#aa00aa:#00aaaa:#aaaaaa:#555555:#ff5555:#55ff55:#ffff55:#5555ff:#ff55ff:#55ffff:#ffffff"
+    login_shell = True
+    use_custom_command = True
+    custom_command = zsh
+    use_system_font = False
+    bold_is_bright = True
+    copy_on_selection = True
+[layouts]
+  [[default]]
+    [[[window0]]]
+      type = Window
+      parent = ""
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+[plugins]

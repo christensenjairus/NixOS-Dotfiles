@@ -1,0 +1,39 @@
+swipe:
+  3:
+    down:
+      command: "xdotool key alt+Right"
+    up:
+      command: "xdotool key alt+Left"
+    right:
+      command: "sleep 0.2; xdotool key ctrl+Page_Up"
+    left:
+      command: "sleep 0.2; xdotool key ctrl+Page_Down"
+  4:
+    left:
+      command: "xdotool key ctrl+Shift+Tab"
+    right:
+      command: "xdotool key ctrl+Tab"
+    up:
+      command: "xdotool key super+ctrl+z"
+    down:
+      command: "xdotool key super+z"
+
+pinch:
+  2:
+    in:
+      command: "xdotool key ctrl+equal"
+    out:
+      command: "xdotool key ctrl+minus"
+  4:
+    in:
+      command: "xdotool key super+a"
+    out:
+      command: "xdotool key super+s"
+
+threshold:
+  swipe: 0.3
+  pinch: 0.1
+
+interval:
+  swipe: 1
+  pinch: 1

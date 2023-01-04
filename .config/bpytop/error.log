@@ -1,0 +1,128 @@
+02/01/23 (16:20:36) | ERROR: Input thread failed with exception: [Errno 5] Input/output error
+Traceback (most recent call last):
+  File "/nix/store/h07gnm6padl1rymgd2w75ghj7gy7a18f-bpytop-1.0.68/libexec/bpytop.py", line 957, in _get_key
+    input_key += sys.stdin.read(1)						#* Read 1 key safely with blocking on
+OSError: [Errno 5] Input/output error
+03/01/23 (08:39:10) | ERROR: Input thread failed with exception: [Errno 5] Input/output error
+Traceback (most recent call last):
+  File "/nix/store/1093a1f3csf34icr9zv7w2bzcblmf7k1-bpytop-1.0.68/libexec/bpytop.py", line 957, in _get_key
+    input_key += sys.stdin.read(1)						#* Read 1 key safely with blocking on
+OSError: [Errno 5] Input/output error
+03/01/23 (08:43:41) | ERROR: Input thread failed with exception: [Errno 5] Input/output error
+Traceback (most recent call last):
+  File "/nix/store/1093a1f3csf34icr9zv7w2bzcblmf7k1-bpytop-1.0.68/libexec/bpytop.py", line 957, in _get_key
+    input_key += sys.stdin.read(1)						#* Read 1 key safely with blocking on
+OSError: [Errno 5] Input/output error
+03/01/23 (08:57:12) | ERROR: Input thread failed with exception: [Errno 5] Input/output error
+Traceback (most recent call last):
+  File "/nix/store/1093a1f3csf34icr9zv7w2bzcblmf7k1-bpytop-1.0.68/libexec/bpytop.py", line 957, in _get_key
+    input_key += sys.stdin.read(1)						#* Read 1 key safely with blocking on
+OSError: [Errno 5] Input/output error
+03/01/23 (09:03:08) | ERROR: Input thread failed with exception: [Errno 5] Input/output error
+Traceback (most recent call last):
+  File "/nix/store/1093a1f3csf34icr9zv7w2bzcblmf7k1-bpytop-1.0.68/libexec/bpytop.py", line 957, in _get_key
+    input_key += sys.stdin.read(1)						#* Read 1 key safely with blocking on
+OSError: [Errno 5] Input/output error
+03/01/23 (09:25:31) | ERROR: Input thread failed with exception: [Errno 5] Input/output error
+Traceback (most recent call last):
+  File "/nix/store/1093a1f3csf34icr9zv7w2bzcblmf7k1-bpytop-1.0.68/libexec/bpytop.py", line 957, in _get_key
+    input_key += sys.stdin.read(1)						#* Read 1 key safely with blocking on
+OSError: [Errno 5] Input/output error
+03/01/23 (09:29:40) | ERROR: Input thread failed with exception: (5, 'Input/output error')
+Traceback (most recent call last):
+  File "/nix/store/1093a1f3csf34icr9zv7w2bzcblmf7k1-bpytop-1.0.68/libexec/bpytop.py", line 954, in _get_key
+    with Raw(sys.stdin):
+  File "/nix/store/1093a1f3csf34icr9zv7w2bzcblmf7k1-bpytop-1.0.68/libexec/bpytop.py", line 798, in __exit__
+    termios.tcsetattr(self.stream, termios.TCSANOW, self.original_stty)
+termios.error: (5, 'Input/output error')
+03/01/23 (09:37:14) | ERROR: Input thread failed with exception: [Errno 5] Input/output error
+Traceback (most recent call last):
+  File "/nix/store/1093a1f3csf34icr9zv7w2bzcblmf7k1-bpytop-1.0.68/libexec/bpytop.py", line 957, in _get_key
+    input_key += sys.stdin.read(1)						#* Read 1 key safely with blocking on
+OSError: [Errno 5] Input/output error
+03/01/23 (09:39:12) | ERROR: Input thread failed with exception: [Errno 5] Input/output error
+Traceback (most recent call last):
+  File "/nix/store/1093a1f3csf34icr9zv7w2bzcblmf7k1-bpytop-1.0.68/libexec/bpytop.py", line 957, in _get_key
+    input_key += sys.stdin.read(1)						#* Read 1 key safely with blocking on
+OSError: [Errno 5] Input/output error
+03/01/23 (09:42:59) | ERROR: Input thread failed with exception: (5, 'Input/output error')
+Traceback (most recent call last):
+  File "/nix/store/1093a1f3csf34icr9zv7w2bzcblmf7k1-bpytop-1.0.68/libexec/bpytop.py", line 954, in _get_key
+    with Raw(sys.stdin):
+  File "/nix/store/1093a1f3csf34icr9zv7w2bzcblmf7k1-bpytop-1.0.68/libexec/bpytop.py", line 798, in __exit__
+    termios.tcsetattr(self.stream, termios.TCSANOW, self.original_stty)
+termios.error: (5, 'Input/output error')
+03/01/23 (09:47:26) | ERROR: Input thread failed with exception: [Errno 5] Input/output error
+Traceback (most recent call last):
+  File "/nix/store/1093a1f3csf34icr9zv7w2bzcblmf7k1-bpytop-1.0.68/libexec/bpytop.py", line 957, in _get_key
+    input_key += sys.stdin.read(1)						#* Read 1 key safely with blocking on
+OSError: [Errno 5] Input/output error
+03/01/23 (09:48:50) | ERROR: Input thread failed with exception: [Errno 5] Input/output error
+Traceback (most recent call last):
+  File "/nix/store/1093a1f3csf34icr9zv7w2bzcblmf7k1-bpytop-1.0.68/libexec/bpytop.py", line 957, in _get_key
+    input_key += sys.stdin.read(1)						#* Read 1 key safely with blocking on
+OSError: [Errno 5] Input/output error
+03/01/23 (10:08:02) | ERROR: Input thread failed with exception: [Errno 5] Input/output error
+Traceback (most recent call last):
+  File "/nix/store/1093a1f3csf34icr9zv7w2bzcblmf7k1-bpytop-1.0.68/libexec/bpytop.py", line 957, in _get_key
+    input_key += sys.stdin.read(1)						#* Read 1 key safely with blocking on
+OSError: [Errno 5] Input/output error
+03/01/23 (10:10:56) | ERROR: Input thread failed with exception: (5, 'Input/output error')
+Traceback (most recent call last):
+  File "/nix/store/1093a1f3csf34icr9zv7w2bzcblmf7k1-bpytop-1.0.68/libexec/bpytop.py", line 954, in _get_key
+    with Raw(sys.stdin):
+  File "/nix/store/1093a1f3csf34icr9zv7w2bzcblmf7k1-bpytop-1.0.68/libexec/bpytop.py", line 798, in __exit__
+    termios.tcsetattr(self.stream, termios.TCSANOW, self.original_stty)
+termios.error: (5, 'Input/output error')
+03/01/23 (10:55:20) | ERROR: Input thread failed with exception: [Errno 5] Input/output error
+Traceback (most recent call last):
+  File "/nix/store/1093a1f3csf34icr9zv7w2bzcblmf7k1-bpytop-1.0.68/libexec/bpytop.py", line 957, in _get_key
+    input_key += sys.stdin.read(1)						#* Read 1 key safely with blocking on
+OSError: [Errno 5] Input/output error
+04/01/23 (05:04:00) | ERROR: Input thread failed with exception: [Errno 5] Input/output error
+Traceback (most recent call last):
+  File "/nix/store/1093a1f3csf34icr9zv7w2bzcblmf7k1-bpytop-1.0.68/libexec/bpytop.py", line 957, in _get_key
+    input_key += sys.stdin.read(1)						#* Read 1 key safely with blocking on
+OSError: [Errno 5] Input/output error
+04/01/23 (05:52:35) | ERROR: <urlopen error [Errno -3] Temporary failure in name resolution>
+Traceback (most recent call last):
+  File "/nix/store/65cp4izx3bllnwqn7c7dhrq9h9gmjkal-python3-3.10.9/lib/python3.10/urllib/request.py", line 1348, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+  File "/nix/store/65cp4izx3bllnwqn7c7dhrq9h9gmjkal-python3-3.10.9/lib/python3.10/http/client.py", line 1282, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/nix/store/65cp4izx3bllnwqn7c7dhrq9h9gmjkal-python3-3.10.9/lib/python3.10/http/client.py", line 1328, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/nix/store/65cp4izx3bllnwqn7c7dhrq9h9gmjkal-python3-3.10.9/lib/python3.10/http/client.py", line 1277, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/nix/store/65cp4izx3bllnwqn7c7dhrq9h9gmjkal-python3-3.10.9/lib/python3.10/http/client.py", line 1037, in _send_output
+    self.send(msg)
+  File "/nix/store/65cp4izx3bllnwqn7c7dhrq9h9gmjkal-python3-3.10.9/lib/python3.10/http/client.py", line 975, in send
+    self.connect()
+  File "/nix/store/65cp4izx3bllnwqn7c7dhrq9h9gmjkal-python3-3.10.9/lib/python3.10/http/client.py", line 1447, in connect
+    super().connect()
+  File "/nix/store/65cp4izx3bllnwqn7c7dhrq9h9gmjkal-python3-3.10.9/lib/python3.10/http/client.py", line 941, in connect
+    self.sock = self._create_connection(
+  File "/nix/store/65cp4izx3bllnwqn7c7dhrq9h9gmjkal-python3-3.10.9/lib/python3.10/socket.py", line 824, in create_connection
+    for res in getaddrinfo(host, port, 0, SOCK_STREAM):
+  File "/nix/store/65cp4izx3bllnwqn7c7dhrq9h9gmjkal-python3-3.10.9/lib/python3.10/socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/nix/store/1093a1f3csf34icr9zv7w2bzcblmf7k1-bpytop-1.0.68/libexec/bpytop.py", line 5029, in _checker
+    with urllib.request.urlopen("https://github.com/aristocratos/bpytop/raw/master/bpytop.py", timeout=5) as source: # type: ignore
+  File "/nix/store/65cp4izx3bllnwqn7c7dhrq9h9gmjkal-python3-3.10.9/lib/python3.10/urllib/request.py", line 216, in urlopen
+    return opener.open(url, data, timeout)
+  File "/nix/store/65cp4izx3bllnwqn7c7dhrq9h9gmjkal-python3-3.10.9/lib/python3.10/urllib/request.py", line 519, in open
+    response = self._open(req, data)
+  File "/nix/store/65cp4izx3bllnwqn7c7dhrq9h9gmjkal-python3-3.10.9/lib/python3.10/urllib/request.py", line 536, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+  File "/nix/store/65cp4izx3bllnwqn7c7dhrq9h9gmjkal-python3-3.10.9/lib/python3.10/urllib/request.py", line 496, in _call_chain
+    result = func(*args)
+  File "/nix/store/65cp4izx3bllnwqn7c7dhrq9h9gmjkal-python3-3.10.9/lib/python3.10/urllib/request.py", line 1391, in https_open
+    return self.do_open(http.client.HTTPSConnection, req,
+  File "/nix/store/65cp4izx3bllnwqn7c7dhrq9h9gmjkal-python3-3.10.9/lib/python3.10/urllib/request.py", line 1351, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [Errno -3] Temporary failure in name resolution>
