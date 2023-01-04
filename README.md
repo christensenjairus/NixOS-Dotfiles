@@ -1,5 +1,4 @@
-# NixOS-Config
-## Desktop Workstation
+# DotFiles for Linux Workstation
 ### NixOS + AwesomeWM + LightDM + X11 + i3lock
 #### Desktop on login
 ![Desktop on login](https://github.com/christensenjairus/NixOS-Config/blob/main/desktop%20screenshot.png)
