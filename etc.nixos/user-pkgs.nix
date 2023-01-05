@@ -1,11 +1,10 @@
 pkgs: with pkgs; [
       # For AwesomeWM
       awesome
-      #roboto
-      #rofi
+      rofi
       dmenu
       picom
-      i3lock
+      i3lock-fancy-rapid
       xclip
       polkit_gnome
       libsecret
@@ -17,9 +16,6 @@ pkgs: with pkgs; [
       papirus-icon-theme
       # lxde.lxsession
       lxappearance
-      #xorg.xbacklight
-      #acpilight
-      brightnessctl
       flameshot
       pnmixer
       networkmanagerapplet
@@ -27,38 +23,47 @@ pkgs: with pkgs; [
       networkmanager-openconnect
       xfce.xfce4-power-manager
       volumeicon
-      xautolock
+      # xautolock
       #compton
-      #feh
+      feh
       nitrogen
       variety
       arandr
       # blueberry
       fusuma
-      jetbrains-mono
+      conky
+      xfce.thunar
+      xss-lock
+      libnotify
       #haskellPackages.dmenu
       #haskellPackages.dmenu-pkill
       #haskellPackages.dmenu-search
       #haskellPackages.dmenu-pmount
       #haskellPackages.yeganesh
 
+      # Needed for ThinkPad
+      xorg.xf86videointel
+      # xorg.xbacklight
+      acpilight # includes xbacklight (supercedes it, actually)
+      brightnessctl
+
       # None AwesomeWM Pkgs
       firefox
       # alacritty
-      emacs
+      # emacs
       electron
       neofetch
-      gnome-photos
+      # gnome-photos
       # tilix
       terminator
       unrar-wrapper
       lolcat
       inxi
-      killall
       wireguard-tools
       vscode
       # gnome.nautilus
-      pcmanfm
+      lf
+      # pcmanfm
       # nautilus-open-any-terminal
       dropbox
       joplin-desktop
@@ -77,7 +82,7 @@ pkgs: with pkgs; [
       jetbrains.gateway
       jetbrains.datagrip
       spotify
-      pithos
+      # pithos can't get this working without Gnome. Pianobar is fine instead.
       pianobar
       wpsoffice
       vmware-workstation
@@ -85,16 +90,18 @@ pkgs: with pkgs; [
       zoom-us
       virtualbox
       remmina
-      xterm
-      meslo-lgs-nf
+      xterm # needs to be installed for many applications that open terminals.
+      #zsh
+      oh-my-zsh
       zsh-powerlevel10k
+      fzf
       xdotool
       wmctrl
       # libinput
-      # libinput-gestures
+      # libinput-gestures # Using a fusuma for this in AwesomeWM.
       bluez
       bluez-tools
-      system-config-printer
+      system-config-printer # Might just be needed in Gnome?
       macchanger
       zerotierone
       openvpn
@@ -113,13 +120,13 @@ pkgs: with pkgs; [
       ardour
       audacity
       atom
-      ulauncher
+      # ulauncher # Using dmenu and rofi instead. But this is prettier.
       etcher
       notepadqq
       darktable
       pdfsam-basic
       ffmpeg_5-full
-      clinfo
+      clinfo # might only be necessary for testing OpenCL graphics.
       tmux
       ocrmypdf
       teams
@@ -127,20 +134,28 @@ pkgs: with pkgs; [
       discord
       gparted
       nodejs
-      python311
-      zsh
-      oh-my-zsh
-      touchegg
+      python3 # still can't figure out how to install python packages.
+      poetry
+      node2nix
+      yarn2nix
+      toml2nix
+      # stack2nix # nix says this is temporarily broken
+      setupcfg2nix
+      #python3Packages.pip # Not sure I can even use this in NixOS
+      #python2Full
+      # touchegg
       dolphin-emu
       cemu
       retroarchFull
       qt6.full
       gnumake
       canta-theme
+      neovim
       vimix-icon-theme
       oceanic-theme
       material-icons
-      #gnome.gnome-tweaks
+      gnome.gnome-tweaks
+      gnome.gnome-system-monitor
       #gnomeExtensions.x11-gestures
       #gnomeExtensions.gesture-improvements
       #gnomeExtensions.desktop-icons-ng-ding
@@ -166,10 +181,10 @@ pkgs: with pkgs; [
       ### Penetration Testing ###
       ### General utils ###
       # bat
-      # ranger
+      ranger # file explorer, lf is an edited version of this
 
       ### Exploitation ###
-      # metasploit
+      metasploit
       # sqlmap
 
       ### Forensics ###
@@ -177,12 +192,12 @@ pkgs: with pkgs; [
       # ddrescue
       # ext4magic
       # extundelete
-      # ghidra-bin
-      # git
+      ghidra-bin
+      git
       # p0f
       # pdf-parser
-      # python39Packages.binwalk
-      # python39Packages.distorm3
+      python310Packages.binwalk
+      python310Packages.distorm3
       # sleuthkit
       # volatility
 
@@ -191,19 +206,19 @@ pkgs: with pkgs; [
 
       ### Recon ###
       # cloudbrute
-      # dnsenum
-      # dnsrecon
-      # enum4linux
+      dnsenum
+      dnsrecon
+      enum4linux
       # hping
-      # masscan
-      # netcat
-      # nmap
+      masscan
+      netcat
+      nmap
       # ntopng
       # sn0int
       # sslsplit
-      # theharvester
-      # wireshark
-      # wireshark-cli
+      theharvester
+      wireshark
+      # wireshark-cli # should include wireshark
 
       ### Backdoors ###
       # httptunnel
@@ -214,12 +229,12 @@ pkgs: with pkgs; [
       # chntpw
       # crowbar
       # crunch
-      # hashcat
+      hashcat
       # hcxtools
-      # john
+      john
       # python36Packages.patator
       # phrasendrescher
-      # thc-hydra
+      thc-hydra
 
       ### Reverse ###
       # binutils
@@ -231,7 +246,7 @@ pkgs: with pkgs; [
       # radare2-cutter
       # retdec
       # snowman
-      # valgrind
+      valgrind
       # yara
 
       ### Sniffing ###
@@ -245,13 +260,13 @@ pkgs: with pkgs; [
       ### Vuln analisys ###
       # grype
       # lynis
-      # sqlmap
+      # sqlmap # In exploitation section
       # vulnix
 
       ### Web ###
-      # burpsuite
-      # dirb
-      # gobuster
+      burpsuite
+      dirb
+      gobuster
       # urlhunter
       # wfuzz
       # wpscan

@@ -7,6 +7,10 @@ pkgs: with pkgs; [
     git
     #plocate
     killall
+    nixos-option
+    lightdm
+    lightdm-tiny-greeter
+    # accountsservice
     # nginx # Using service for this instead
     # apacheHttpd
 ]
