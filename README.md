@@ -17,7 +17,8 @@
       - Use the files in the `etc.nixos` directory to help you set up a config that will work for your hardware.
       - **NOTE: Do not edit your existing `hardware-configuration.nix` file because this may be different on many machines. Do not use mine**
       - You can directly copy `user-pkgs.nix` and `root-pkgs.nix`, but do edits to your `configuration.nix` by hand. 
-5) Try building the system and reboot if it succeeds.
+5) Build the system (this will take a long time with how many packages there are in `user-pkgs.nix`) and reboot.
+6) See notes for tidbits of useful info.
 
 ## Notes:
 ### Onedrive
