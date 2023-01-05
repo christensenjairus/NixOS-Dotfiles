@@ -1,13 +1,13 @@
 # DotFiles for Linux Workstation
 ### NixOS + AwesomeWM + LightDM + X11 + i3lock
 #### Desktop on login
-![Desktop on login](https://github.com/christensenjairus/NixOS-Config/blob/main/desktop%20screenshot.png)
+![Desktop on login](https://github.com/christensenjairus/NixOS-Config/blob/main/README_images/desktop%20screenshot.png)
 #### Desktop on blank tag
-![Desktop on blank tag](https://github.com/christensenjairus/NixOS-Config/blob/main/desktop%20screenshot2.png)
+![Desktop on blank tag](https://github.com/christensenjairus/NixOS-Config/blob/main/README_images/desktop%20screenshot2.png)
 #### Personizable & Dynamic Keybindings Popup
-![AwesomeWM Keybindings](https://github.com/christensenjairus/NixOS-Config/blob/main/keybindings.png)
+![AwesomeWM Keybindings](https://github.com/christensenjairus/NixOS-Config/blob/main/README_images/keybindings.png)
 #### Right Click Menu on Desktop
-![AwesomeWM Menu](https://github.com/christensenjairus/NixOS-Config/blob/main/menu%20screenshot.png)
+![AwesomeWM Menu](https://github.com/christensenjairus/NixOS-Config/blob/main/README_images/menu%20screenshot.png)
 * * *
 ## Procedure
 1) Install the gnome version of NixOS and don't do anything special.
