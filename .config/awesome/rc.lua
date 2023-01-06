@@ -91,8 +91,6 @@ local function run_once(cmd_arr)
     end
 end
 
-lock -n 'i3lock-fancy-rapid 1 20' -- systemctl suspend-then-hibernate"})
-
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
 local hotkeys_popup = require("awful.hotkeys_popup").widget
@@ -996,7 +994,7 @@ awful.spawn.with_shell("kill `pidof thunar`; thunar")
 awful.spawn.single_instance("joplin-desktop", {})
 --awful.spawn.with_shell("killall .spotify-wrapped; spotify")
 awful.spawn.with_shell("code /home/line6/.config/awesome/")
-awful.spawn.with_shell("code /home/line6/dotfiles/etc.nixos/")
+awful.spawn.with_shell("code /home/line6/NIXOS/")
 
 -- Wallpaper
 --awful.spawn.with_shell("xargs xwallpaper --stretch < ~/.cache/wall")

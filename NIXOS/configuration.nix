@@ -303,7 +303,7 @@ in
 
           # Jairus' Commands
           alias update="sudo nix-channel --update"
-          alias rebuild="sudo nixos-rebuild switch"
+          alias rebuild="sudo cp /home/line6/NIXOS/* /etc/nixos/ && sudo nixos-rebuild switch"
           alias clean="sudo nix-env --delete-generations old && sudo nix-store --gc && sudo nix-collect-garbage -d"
           alias n="nvim"
         '';

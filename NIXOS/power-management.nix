@@ -17,7 +17,7 @@ let
   # I'm setting this to the same times as the xss-lock commands in AwesomeWM's rc.lua
   minsFromIdleUntilLock = 1;
   minsFromIdleUntilSuspend = "2";
-  minsFromSuspendUntilHibernate = "1";
+  minsFromSuspendUntilHibernate = "20"; # enough to get between classes
 
 in {
     # This can all be done by running this on boot:
@@ -57,7 +57,7 @@ in {
         # Without a desktop env, the idle time isn't communicated to systemd so these won't work
         # IdleAction=suspend-then-hibernate
         # IdleActionSec=${minsFromIdleUntilSuspend}m
-        StopIdleSessionSec=1m
+        # StopIdleSessionSec=1m
       '';
     };
 
