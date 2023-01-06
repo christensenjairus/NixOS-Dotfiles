@@ -49,10 +49,14 @@ pkgs: with pkgs; [
 
       # None AwesomeWM Pkgs
       firefox
+      docker
+      docker-compose
+      lazydocker
       # alacritty
       # emacs
       electron
       neofetch
+      unzip
       # gnome-photos
       # tilix
       terminator

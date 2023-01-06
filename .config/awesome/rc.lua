@@ -993,8 +993,9 @@ awful.spawn.single_instance("firefox", {})
 awful.spawn.with_shell("kill `pidof thunar`; thunar")
 awful.spawn.single_instance("joplin-desktop", {})
 --awful.spawn.with_shell("killall .spotify-wrapped; spotify")
-awful.spawn.with_shell("code /home/line6/.config/awesome/")
-awful.spawn.with_shell("code /home/line6/NIXOS/")
+--awful.spawn.with_shell("code /home/line6/.config/awesome/")
+--awful.spawn.with_shell("code /home/line6/NIXOS/")
+awful.spawn.with_shell("code /home/line6")
 
 -- Wallpaper
 --awful.spawn.with_shell("xargs xwallpaper --stretch < ~/.cache/wall")
