@@ -24,7 +24,7 @@ pkgs: with pkgs; [
       xfce.xfce4-power-manager
       volumeicon
       # xautolock
-      #compton
+      # compton
       feh
       nitrogen
       variety

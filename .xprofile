@@ -1,2 +1,10 @@
 eval $(/run/wrappers/bin/gnome-keyring-daemon --start --daemonize)
 export SSH_AUTH_SOCK
+
+# First number is seconds from idle until lockscreen
+# Second number is seconds from lockscreen to suspend
+xset s 300 900
+# Lock after 300s (5min), suspend after another 900s(15min)
+
+# Lock screen & suspend based off the above two xset numbers
+xss-lock -n 'i3lock-fancy-rapid 1 50' -- systemctl suspend-then-hibernate &

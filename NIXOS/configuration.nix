@@ -6,16 +6,28 @@
 let
 username = "line6";
 displayname = "Jairus Christensen";
+pubsshkey1 = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDjxV/ZxnvuNnSaMzzKCXc5cDtpVqLfwod0SKHkYcriaAZmrJwfCpWUKIDD5Www0YFWllucHZoTGDovCx4RwOhimDC0kMHvSNrXz2CJpeheN1gvSods6oWO2Y4Qat/8UVSsL8TaOenX6GbsKP7Vvbw8a+ROxs6E6S9MZeGNKQ3P8cD5goV3RgVZfmcqqwXqc2NwMaJkguZMqxNgC5IYuGudaYI5dqPOV7AqiyW1eRVh48z7Ce75vPwiBJQF5jrv6DvMNiL69hletHzEUnBUmiuAkBwEXHqzxbOQVRwZNOxj7+CejaJr4NA+d+Y0daRP9LO1rYz66bVPW0wc1/feEWROipDLOnoIGbKwhgP8PulYDd4KEKOoyrc8HjqbQDNLSQRnw5cMYLhTXMfci2oAJaUjv2ler1JAi4M8vK9PYMf6U6FmX5GiKmuCf51IM+NJH471tzhlmqSNKJ7brij4ppFMYEgpPWeK2n2yBajNHDLSgj9Qxv08vLaJpNxSRCY3QoM= jairus christensen@Zeus-Win11Pro"; 
 
 in
 {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./power-management.nix
     ];
 
-  # Kernel
-  # boot.kernelPackages = pkgs.linuxPackages_5_15;
+  # Kernel (latest)
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+
+  # AutoUpgrade
+  system.autoUpgrade = {
+    enable = true;
+    channel = "https://nixos.org/channels/nixos-unstable";
+  };
+
+  # Garbage Collection (4am every day)
+  nix.gc.automatic = true;
+  nix.gc.dates = "04:00";
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -67,7 +79,6 @@ in
       # Enable the X11 windowing system.
       services.xserver = {
         enable = true;
-        xautolock.enable = true;
 
         # Display Manager
         displayManager = {
@@ -76,12 +87,12 @@ in
             greeters.enso = {
               enable = true;
               blur = true;
-              #user = "line6";
+              #user = username;
             };
             background = "${/home/line6/.wallpaper.jpg}";
             #extraConfig = ''
             #  #[User]
-            #  Icon="${/home/line6/.face}" # This does not work here or in the greeters.
+            #  Icon= "${/home/line6/.face}" # This does not work here or in the greeters.
             #'';
           };
           defaultSession = "none+awesome";
@@ -102,16 +113,6 @@ in
           touchpad.tapping = true;
           touchpad.naturalScrolling = true;
         };
-
-        # xautolock = {
-        #  enable = true;
-        #  # xautolock.locker = "${pkgs.i3lock-fancy-rapid}/bin/i3lock-fancy-rapid 1 20"; # using xss-lock instead
-        #  extraOptions = [
-        #  "-lockaftersleep"
-        #  "-detectsleep"
-        #  ];
-        #  time = 1;
-        #};
       };
 
       #programs.xss-lock = {
@@ -138,7 +139,7 @@ in
     description = "${displayname}";
     extraGroups = [ "networkmanager" "wheel" "input" "video" ];
     packages = import ./user-pkgs.nix pkgs;
-    openssh.authorizedKeys.keys = [ "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDjxV/ZxnvuNnSaMzzKCXc5cDtpVqLfwod0SKHkYcriaAZmrJwfCpWUKIDD5Www0YFWllucHZoTGDovCx4RwOhimDC0kMHvSNrXz2CJpeheN1gvSods6oWO2Y4Qat/8UVSsL8TaOenX6GbsKP7Vvbw8a+ROxs6E6S9MZeGNKQ3P8cD5goV3RgVZfmcqqwXqc2NwMaJkguZMqxNgC5IYuGudaYI5dqPOV7AqiyW1eRVh48z7Ce75vPwiBJQF5jrv6DvMNiL69hletHzEUnBUmiuAkBwEXHqzxbOQVRwZNOxj7+CejaJr4NA+d+Y0daRP9LO1rYz66bVPW0wc1/feEWROipDLOnoIGbKwhgP8PulYDd4KEKOoyrc8HjqbQDNLSQRnw5cMYLhTXMfci2oAJaUjv2ler1JAi4M8vK9PYMf6U6FmX5GiKmuCf51IM+NJH471tzhlmqSNKJ7brij4ppFMYEgpPWeK2n2yBajNHDLSgj9Qxv08vLaJpNxSRCY3QoM= jairus christensen@Zeus-Win11Pro" ];
+    openssh.authorizedKeys.keys = [ "${pubsshkey1}" ];
   };
 
   # Allow some insecure or EOL packages
@@ -277,52 +278,6 @@ in
     #    '';
     #  };
 
-  # START SLEEP SETTINGS #
-    systemd.targets.sleep.enable = true;
-    systemd.targets.suspend.enable = true;
-    systemd.targets.hibernate.enable = true;
-    systemd.targets.hybrid-sleep.enable = true;
-    # services.xserver.displayManager.gdm.autoSuspend = false;
-    # services.xserver.xautolock.time = 0; # Defined at top if xserver instead
-
-    # Sleep/Hibernation (see 'nix-option services.logind.extraConfig' and 'nix-option systemd.sleep.extraConfig' for details)
-    services.logind = {
-      lidSwitch="suspend-then-hibernate";
-      lidSwitchDocked="ignore";
-      lidSwitchExternalPower="ignore";
-      extraConfig = ''
-        # Timings here don't currently work\"\\n\"
-        IdleAction=suspend-then-hibernate\"\\n\"
-        # IdleActionSec=900 # suspend after 15 mins\"\\n\"
-        IdleActionSec=1min # Testing\"\\n\"
-        HandlePowerKey=hibernate\"\\n\"
-        #HoldoffTimeoutSec=1min # how long after startup before starting to count the idle seconds\"\\n\"
-        HoldoffTimeoutSec=0min\"\\n\"
-      '';
-    };
-    # States to be used below are as follows:
-    #  'freeze' (Suspend-to-Idle)
-    #  'standby' (Power-On Suspend)
-    #  'mem' (Suspend-to-RAM)
-    #  'disk' (Suspend-to-Disk)
-    # Modes to be used below are as follows:
-    #  'platform' (put the system into sleep using a platform-provided method)
-    #  'shutdown' (shut the system down)
-    #  'reboot' (reboot the system)
-    #  'suspend' (trigger a Suspend-to-RAM transition)
-    #  'test_resume' (resume-after-hibernation test mode)
-    systemd.sleep.extraConfig = ''
-      # The next line is not currently working\"\\n\"
-      # HibernateDelaySec=15min # enough to get between classes but not longer\"\\n\"
-      HibernateDelaySec=1min # Testing\"\\n\"
-      SuspendState=mem standby freeze\"\\n\"
-      HibernateMode=test_resume platform shutdown\"\\n\"
-      #HibernateState=disk\"\\n\"
-      HybridSleepMode=suspend\"\\n\"
-      HybridSleepState=freeze\"\\n\"
-    '';
-  # END SLEEP SETTINGS #
-
   # Program Configurations
     programs = {
       zsh = {
@@ -355,6 +310,7 @@ in
         promptInit = "source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme"; # sets theme
       };
     };
+    environment.shells = [ pkgs.zsh ];
 
   # Configure keymap in X11
   services.xserver = {
@@ -367,7 +323,7 @@ in
   # Open ports in the firewall.
   networking.firewall = {
     enable = true;
-    #enable = false;
+    allowPing = true;
     allowedTCPPorts = [ 22 3389 5432 ];
     allowedTCPPortRanges = [
       { from = 1714; to = 1764;} # KDE Connect
