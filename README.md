@@ -20,6 +20,11 @@
 6) See notes for tidbits of useful info.
 
 ## Notes:
+### Power Management
+The suspend-then-hibernate time is in `NIXOS/power-management.nix`
+The lock screen and subsequent suspend times are set in `.xprofile`
+### Keyring
+Like some of the power options, the keyring is also started in `.xprofile`
 ### Onedrive
 Run these commands once to get the onedrive daemon started
 ```bash
