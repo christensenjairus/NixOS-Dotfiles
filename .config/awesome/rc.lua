@@ -84,6 +84,15 @@ naughty.config.defaults['icon_size'] = 100
 local lain          = require("lain")
 local freedesktop   = require("freedesktop")
 
+-- This function will run once every time Awesome is started
+local function run_once(cmd_arr)
+    for _, cmd in ipairs(cmd_arr) do
+        awful.spawn.with_shell(string.format("pgrep -u $USER -fx '%s' > /dev/null || (%s)", cmd, cmd))
+    end
+end
+
+lock -n 'i3lock-fancy-rapid 1 20' -- systemctl suspend-then-hibernate"})
+
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
 local hotkeys_popup = require("awful.hotkeys_popup").widget
@@ -941,7 +950,12 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 awful.spawn.with_shell("killall conky; conky -c $HOME/.config/conky/awesome/" .. "parrot" .. "-01.conkyrc")
 awful.spawn.with_shell("/nix/store/i02lziq04y5j8wkkckzp608aqbr29bcs-kdeconnect-kde-22.08.3/libexec/kdeconnectd") -- This isn't running on boot, not sure why
 awful.spawn.with_shell("picom")
-awful.spawn.with_shell("xset s 600 && xss-lock -- i3lock-fancy-rapid 1 20 &") -- Lock screen after 10 mins (600 seconds)
+
+-- POWER MANAGEMENT SCREEN SETTINGS
+-- First 'xset s' number is seconds until screen lock
+-- Second 'xset s' number is seconds until suspend-then-hibernate
+--awful.spawn.with_shell("xset s 10 20; xss-lock -n 'i3lock-fancy-rapid 1 20' -- systemctl suspend-then-hibernate")
+
 -- awful.spawn.with_shell(soundplayer .. startupSound)
 -- awful.spawn.with_shell("lxsession &")
 -- awful.spawn.with_shell("gnome-keyring") -- needs to be started in .xprofile
@@ -982,6 +996,7 @@ awful.spawn.with_shell("kill `pidof thunar`; thunar")
 awful.spawn.single_instance("joplin-desktop", {})
 --awful.spawn.with_shell("killall .spotify-wrapped; spotify")
 awful.spawn.with_shell("code /home/line6/.config/awesome/")
+awful.spawn.with_shell("code /home/line6/dotfiles/etc.nixos/")
 
 -- Wallpaper
 --awful.spawn.with_shell("xargs xwallpaper --stretch < ~/.cache/wall")
