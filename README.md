@@ -41,3 +41,7 @@ After the first use, only the following command is necessary
 ```bash
 db_connect msf
 ```
+* * *
+ TODO:
+ * Add lxappearance theming in configs
+ * Use Home-Manager to handle these .config files
