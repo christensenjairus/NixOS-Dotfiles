@@ -21,10 +21,9 @@
 
 ## Notes:
 ### Power Management
-The suspend-then-hibernate time is in `NIXOS/power-management.nix`
-The lock screen and subsequent suspend times are set in `.xprofile`
+The suspend-then-hibernate time is in `NIXOS/power-management.nix` while the time from idle->lock and lock->suspend-then-hibernate is found in `.config/awesome/power-management.nix`
 ### Keyring
-Like some of the power options, the keyring is also started in `.xprofile`
+The keyring is started in `.xprofile` to avoid running it as the user and needing a password.
 ### Onedrive
 Run these commands once to get the onedrive daemon started
 ```bash
