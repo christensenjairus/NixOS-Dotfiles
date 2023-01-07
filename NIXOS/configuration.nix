@@ -234,13 +234,10 @@ in
       enable = true;
       package = pkgs.postgresql_15;
       enableTCPIP = true;
-      authentication = lib.mkForce ''
-        # Generated file; do not edit!
-        # TYPE  DATABASE        USER            ADDRESS                 METHOD
-        local   all             all                                     trust
-        host    all             all             127.0.0.1/32            trust
-        host    all             all             ::1/128                 trust
-      '';
+      ensureDatabases = [
+        "msf"
+      ]; # Once in metasploit, run `db_connect --name msf msf<:optional_pw>@localhost/msf` on first use and `db_connect msf` after that.
+         # Running `db_save` after you're connected will prevent needing to log in the future.
       ensureUsers = [
         {
           name = "msf";
@@ -249,9 +246,20 @@ in
           };
         }
       ];
-      ensureDatabases = [
-        "msf"
-      ]; # Once in metasploit, run `db_connect --name msf msf:msf@localhost/msf` on first use and `db_connect msf` after that.
+      authentication = lib.mkForce ''
+        # Generated file; do not edit!
+        # TYPE  DATABASE        USER            ADDRESS                 METHOD
+        local   all             all                                     trust
+        host    all             all             127.0.0.1/32            trust
+        host    all             all             ::1/128                 trust
+      '';
+      # Startup script assigns the database to MSF allowing msfconsole to work.
+      initialScript = pkgs.writeText "backend-initScript" ''
+        CREATE ROLE msf WITH LOGIN PASSWORD 'msf' CREATEDB;
+        CREATE DATABASE msf;
+        ALTER DATABASE msf OWNER TO msf;
+        GRANT ALL PRIVILEGES ON DATABASE msf TO msf;
+      '';
     };
 
     #services.interception-tools =
