@@ -11,10 +11,8 @@
         #  'suspend' (trigger a Suspend-to-RAM transition)
         #  'test_resume' (resume-after-hibernation test mode)
 
-{ config, pkgs, ... }: 
+{ config, pkgs, ... }:
 let
-  # This first two times in xautolock may not work every time
-  # I'm setting this to the same times as the xss-lock commands in AwesomeWM's rc.lua
   minsFromIdleUntilLock = 1;
   minsFromIdleUntilSuspend = "2";
   minsFromSuspendUntilHibernate = "20"; # enough to get between classes
