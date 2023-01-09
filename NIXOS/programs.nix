@@ -148,8 +148,9 @@ in {
           source $ZSH/oh-my-zsh.sh
 
           # Jairus' Commands
-          alias update="sudo nix-channel --update"
-          alias rebuild="sudo cp /home/line6/NIXOS/* /etc/nixos/ && sudo nixos-rebuild switch"
+          alias update="pushd ~/ && sudo nix flake update -I ~/dotfiles/NIXOS/# && popd"
+          alias rebuildsystem="pushd ~/ && sudo nixos-rebuild switch --flake ./dotfiles/NIXOS/# --impure && popd"
+          alias rebuildhome="pushd ~/ && sudo nix build ./dotfiles/NIXOS/#homeManagerConfigurations.line6.activationPackage && sudo ./result/activate && sudo rm -r ./result && popd"
           alias clean="sudo nix-env --delete-generations old && sudo nix-store --gc && sudo nix-collect-garbage -d"
           alias n="nvim"
         '';

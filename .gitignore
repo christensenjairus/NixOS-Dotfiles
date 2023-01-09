@@ -58,3 +58,4 @@ libinput-gestures.conf
 cef_user_data
 .config/QtProject.conf
 .bash_history
+NIXOS/result
