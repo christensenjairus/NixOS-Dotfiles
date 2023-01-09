@@ -48,7 +48,9 @@ pkgs: with pkgs; [
       brightnessctl
 
       # None AwesomeWM Pkgs
+      # home-manager
       firefox
+      brave
       docker
       docker-compose
       lazydocker
@@ -150,7 +152,7 @@ pkgs: with pkgs; [
       # touchegg
       dolphin-emu
       cemu
-      retroarchFull
+      retroarchFull # Failing dependencies on unstable channel
       qt6.full
       gnumake
       canta-theme

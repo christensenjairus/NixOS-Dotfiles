@@ -12,12 +12,21 @@ in
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
+      #./hardware-configuration.nix # Included as a flake module instead
       ./power-management.nix
     ];
 
+  # Make ready for Nix Flakes
+  nix.package = pkgs.nixFlakes;
+  nix.extraOptions = ''
+    experimental-features = nix-command flakes
+  '';
+
   # Kernel (latest)
   boot.kernelPackages = pkgs.linuxPackages_latest;
+
+  # channel
+  #channel = "https://nixos.org/channels/nixos-unstable";
 
   # AutoUpgrade
   system.autoUpgrade = {
@@ -348,5 +357,4 @@ in
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "22.11"; # Did you read the comment?
-
 }
