@@ -26,7 +26,7 @@
           # homeDirectory = "/home/line6";
           modules = [
             #imports = [
-              ./NIXOS/home/line6.nix
+              ./home/line6.nix
             #];
           ];
         };
@@ -39,11 +39,11 @@
 
           modules = [
             # ./NIXOS/configuration.nix
-            ./NIXOS/systems/thinkpadt480s.nix
-            ./NIXOS/my_configuration.nix
-            ./NIXOS/power-management.nix
-            ./NIXOS/programs.nix
-            ./NIXOS/awesomewm.nix
+            ./systems/thinkpadt480s.nix
+            ./my_configuration.nix
+            ./power-management.nix
+            ./programs.nix
+            ./awesomewm.nix
           ];
         };
       };
