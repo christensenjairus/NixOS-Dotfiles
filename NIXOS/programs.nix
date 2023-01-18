@@ -152,6 +152,8 @@ in {
           alias rebuildsystem="pushd ~/ && sudo nixos-rebuild switch --flake ./dotfiles/NIXOS/# --impure && popd"
           alias rebuildhome="pushd ~/ && sudo nix build ./dotfiles/NIXOS/#homeManagerConfigurations.line6.activationPackage && sudo ./result/activate && sudo rm -r ./result && popd"
           alias clean="sudo nix-env --delete-generations old && sudo nix-store --gc && sudo nix-collect-garbage -d"
+          alias zeus_up="sudo wg-quick up ~/VPNs/Zeus.conf"
+          alias zeus_down="sudo wg-quick down ~/VPNs/Zeus.conf"
           alias n="nvim"
         '';
         promptInit = "source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme"; # sets theme

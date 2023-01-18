@@ -27,12 +27,12 @@ awful.spawn.with_shell("sleep 22; slack") -- open this last to be main screen on
 awful.spawn.with_shell("sleep 1.8; terminator -r sys", { -- must wait so race condition is not created because the roles/tags don't exist immediately
     tag = 8, -- open in tag 8, in case this opens. For some reason, this doesn't run properly the first time
 })
-awful.spawn.with_shell("sleep 1.9; terminator -r sys", { -- must wait so race condition is not created because the roles/tags don't exist immediately
-    tag = 8, -- open in tag 8, in case this opens. For some reason, this doesn't run properly the first time
-})
+-- awful.spawn.with_shell("sleep 1.9; terminator -r sys", { -- must wait so race condition is not created because the roles/tags don't exist immediately
+--     tag = 8, -- open in tag 8, in case this opens. For some reason, this doesn't run properly the first time
+-- })
 awful.spawn.with_shell("sleep 2 && terminator -e 'lf && zsh || zsh'")
-awful.spawn.with_shell("sleep 2.1 && terminator -e 'neofetch | lolcat && zsh || zsh'")
-awful.spawn.with_shell("sleep 2.2 && terminator -e 'bpytop && zsh || zsh'") -- largest window
+awful.spawn.with_shell("sleep 2.2 && terminator -e 'neofetch | lolcat && zsh || zsh'")
+awful.spawn.with_shell("sleep 2.4 && terminator -e 'bpytop && zsh || zsh'") -- largest window
 -- awful.spawn("sleep 4; terminator -e 'pianobar && zsh || zsh' -r pianobar", {
 --     tag = 6, -- not sure which of these settings works, but it does.
 --     role = "pianobar",
@@ -46,7 +46,7 @@ awful.spawn.single_instance("joplin-desktop", {})
 --awful.spawn.with_shell("killall .spotify-wrapped; spotify")
 --awful.spawn.with_shell("code /home/line6/.config/awesome/")
 --awful.spawn.with_shell("code /home/line6/NIXOS/")
-awful.spawn.with_shell("code /home/line6")
+awful.spawn.with_shell("code /home/line6/dotfiles")
 
 -- Wallpaper
 --awful.spawn.with_shell("xargs xwallpaper --stretch < ~/.cache/wall")

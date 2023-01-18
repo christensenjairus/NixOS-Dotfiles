@@ -240,16 +240,16 @@ local myawesomemenu = {
     { "Restart", awesome.restart },
 }
 
-local vpnmenu = {
-    { "WireGuard Zeus On", "wg-quick up ~/VPNs/Zeus.conf" },
-    { "WireGuard Zeus Off", "wg-quick down ~/VPNs/Zeus.conf" }
+local vpnmenu = { -- Doesn't work because it needs sudo
+    { "WireGuard Zeus On", "sudo wg-quick up ~/VPNs/Zeus.conf" },
+    { "WireGuard Zeus Off", "sudo wg-quick down ~/VPNs/Zeus.conf" }
 }
 
 awful.util.mymainmenu = freedesktop.menu.build({
     icon_size = beautiful.menu_height or 16,
     before = {
         { "Awesome", myawesomemenu, beautiful.awesome_icon },
-        { "VPNs", vpnmenu },
+        --{ "VPNs", vpnmenu },
         { "Terminal", terminal },
         -- { "Kill bg apps", function() awful.util.spawn("killall slack; killall teams; killall .Discord-wrapped; killall .spotify-wrapper; killall -9 @joplinapp-desktop; kill `pidof thunar`; killall bitwarden; kill `pidof nextcloud`; kill `pidof kdeconnect-indicator kdeconnectd`") end }
         { "Kill bg apps", function()
@@ -275,6 +275,7 @@ awful.util.mymainmenu = freedesktop.menu.build({
             awful.spawn.with_shell("systemctl hibernate") end },
         { "Log out", function() awesome.quit() end },
         { "Restart", "systemctl reboot" },
+        { "Shutdown", "shutdown now" },
         { "Exit", "systemctl poweroff" },
         -- other triads can be put here
     }
@@ -778,6 +779,8 @@ awful.rules.rules = {
         properties = { screen = 1, tag = awful.util.tagnames[6] } },
     { rule = { role = "pianobar" },
         properties = { screen = 1, tag = awful.util.tagnames[6] } },
+    { rule = { role = "Plexamp" },
+        properties = { screen = 1, tag = awful.util.tagnames[6] } },
 
     -- SYS
     { rule = { class = "Thunar" },
@@ -848,7 +851,8 @@ awful.rules.rules = {
           "pinentry",
           "veromix",
           "xtightvncviewer",
-          "nextcloud"
+          "nextcloud",
+          "Plexamp"
         },
         name = {
           "Event Tester",  -- xev.

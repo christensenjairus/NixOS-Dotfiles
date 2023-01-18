@@ -88,6 +88,7 @@ pkgs: with pkgs; [
       jetbrains.gateway
       jetbrains.datagrip
       spotify
+      plexamp
       # pithos can't get this working without Gnome. Pianobar is fine instead.
       pianobar
       wpsoffice
